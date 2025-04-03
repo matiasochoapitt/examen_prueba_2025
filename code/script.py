@@ -1,6 +1,7 @@
 import pandas as pd
 import pathlib
 import plotly.express as px
+import os
 
 
 
@@ -36,5 +37,11 @@ if __name__ == '__main__':
 
 
     fig.show()
+
+    ruta = os.path.join('..', 'results', 'grafico_interactivo.html')
+
+    os.makedirs(os.path.dirname(ruta), exist_ok=True)
+
+    fig.write_html(ruta)
 
 
